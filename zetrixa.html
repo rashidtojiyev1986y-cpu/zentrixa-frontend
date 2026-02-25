@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENTRIXA | Master Words. Master the World.</title>
+    <meta name="description"
+        content="ZENTRIXA - AI-powered English vocabulary learning platform. O'zbekcha-inglizcha lug'at, 15 ta test savollari, A1 dan C1 dagacha 5 ta darajalar. Bepul o'rganing">
+    <meta name="keywords"
+        content="english vocabulary, английский язык, узбекский, learn english, lug'at, test, A1, A2, B1, B2, C1, ZENTRIXA">
+    <meta name="author" content="ZENTRIXA">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="ZENTRIXA | Master Words. Master the World.">
+    <meta property="og:description"
+        content="AI-powered English vocabulary learning platform with interactive quizzes and flashcards for all levels">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.zentrixa.com">
+    <meta property="og:image" content="https://www.zentrixa.com/images/og-image.jpg">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZENTRIXA | Master Words. Master the World.">
+    <meta name="twitter:description"
+        content="Learn English vocabulary with AI-powered quizzes and interactive flashcards">
+    <meta name="twitter:image" content="https://www.zentrixa.com/images/twitter-image.jpg">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0B1120;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: #111827;
+        }
+
+        .navbar nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .logo {
+            color: #06B6D4;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #1E293B 0%, #475569 100%);
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(6, 182, 212, 0.2);
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #06B6D4 0%, #0891b2 100%);
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
+        }
+
+        .test-link {
+            background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%) !important;
+            color: white !important;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4) !important;
+            position: relative;
+            z-index: 10;
+        }
+
+        .test-link:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%) !important;
+            box-shadow: 0 6px 25px rgba(6, 182, 212, 0.8) !important;
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 6px 25px rgba(6, 182, 212, 0.8);
+            }
+        }
+
+        .hero {
+            height: 200px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/quiz-banner.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 12px;
+            font-weight: normal;
+            margin: 0;
+            margin-bottom: 15px;
+        }
+
+        .hero button {
+            padding: 8px 18px;
+            font-size: 13px;
+            background: #2563EB;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .auth-section {
+            display: flex;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .auth-container {
+            background: #1E293B;
+            padding: 40px;
+            border-radius: 12px;
+            width: 350px;
+        }
+
+        .auth-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .auth-container button {
+            width: 100%;
+            padding: 10px;
+            background: #06B6D4;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .auth-container button:hover {
+            background: #0891b2;
+        }
+
+        .auth-container span {
+            color: #06B6D4;
+            cursor: pointer;
+        }
+
+        /* Vocabulary Styles */
+        .vocab-section {
+            padding: 50px 20px;
+            background: #0B1120;
+            display: none;
+        }
+
+        .vocab-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .vocab-container h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #06B6D4;
+        }
+
+        .level-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .level-btn {
+            padding: 12px 25px;
+            background: #1E293B;
+            border: 2px solid #475569;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .level-btn:hover {
+            background: #2563EB;
+            border-color: #2563EB;
+        }
+
+        .level-btn.active {
+            background: #06B6D4;
+            border-color: #06B6D4;
+        }
+
+        .words-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .word-card {
+            background: #1E293B;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #06B6D4;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .word-card:hover {
+            background: #2D3E50;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.2);
+        }
+
+        .word-card.flipped {
+            background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+        }
+
+        .word-uz {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #06B6D4;
+        }
+
+        .word-en {
+            font-size: 1.2em;
+            color: #94A3B8;
+            display: none;
+        }
+
+        .word-card.flipped .word-uz {
+            display: none;
+        }
+
+        .word-card.flipped .word-en {
+            display: block;
+            color: white;
+        }
+
+        .word-hint {
+            font-size: 0.8em;
+            color: #64748B;
+            margin-top: 10px;
+        }
+
+        /* Quiz Styles */
+        .quiz-section {
+            padding: 50px 20px;
+            background: #0B1120;
+            display: none;
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-header h2 {
+            color: #06B6D4;
+            font-size: 2.5em;
+        }
+
+        .quiz-timer {
+            font-size: 2em;
+            color: #06B6D4;
+            font-weight: bold;
+            padding: 15px 30px;
+            background: #1E293B;
+            border-radius: 8px;
+            border: 2px solid #06B6D4;
+        }
+
+        .quiz-timer.warning {
+            color: #f97316;
+        }
+
+        .quiz-timer.danger {
+            color: #ef4444;
+        }
+
+        .question-card {
+            background: #1E293B;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 6px solid #06B6D4;
+            box-shadow: 0 8px 20px rgba(6, 182, 212, 0.15);
+        }
+
+        .question-text {
+            font-size: 1.6em;
+            margin-bottom: 30px;
+            color: white;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            padding: 18px 20px;
+            background: #0F172A;
+            border: 2px solid #475569;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .option:hover {
+            background: #1E293B;
+            border-color: #06B6D4;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .quiz-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .submit-btn,
+        .back-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn {
+            background: #06B6D4;
+            color: white;
+            flex: 1;
+        }
+
+        .submit-btn:hover {
+            background: #0891b2;
+        }
+
+        .back-btn {
+            background: #1E293B;
+            color: white;
+            border: 2px solid #475569;
+        }
+
+        .back-btn:hover {
+            background: #2D3E50;
+        }
+
+        .quiz-result {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .result-score {
+            font-size: 5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .result-message {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .leaderboard {
+            background: #1E293B;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .leaderboard h3 {
+            color: #06B6D4;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #475569;
+            font-size: 1.2em;
+        }
+
+        .leaderboard-item:last-child {
+            border-bottom: none;
+        }
+
+        .leaderboard-rank {
+            color: #06B6D4;
+            font-weight: bold;
+        }
+
+        .quiz-level-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .quiz-level-buttons button {
+            font-size: 1.2em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111827;
+            margin-top: 50px;
+        }
+
+        /* ============ RESPONSIVE DESIGN ============ */
+
+        /* Tablets (768px and below) */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .navbar nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 0.9em;
+                padding: 8px 12px;
+            }
+
+            .logo {
+                font-size: 1.2em;
+            }
+
+            .hero {
+                height: 150px;
+                margin-bottom: 15px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            .hero p {
+                font-size: 10px;
+                margin-bottom: 10px;
+            }
+
+            .hero button {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .vocab-container {
+                max-width: 95%;
+            }
+
+            .vocab-container h2 {
+                font-size: 1.8em;
+            }
+
+            .level-buttons {
+                gap: 8px;
+            }
+
+            .level-btn {
+                padding: 8px 12px;
+                font-size: 0.85em;
+            }
+
+            .words-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 12px;
+            }
+
+            .word-card {
+                padding: 15px;
+                min-height: 100px;
+            }
+
+            .word-uz {
+                font-size: 1.3em;
+                margin-bottom: 5px;
+            }
+
+            .word-en {
+                font-size: 0.9em;
+            }
+
+            .quiz-container {
+                max-width: 95%;
+                padding: 10px;
+            }
+
+            .question-card {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+
+            .question-text {
+                font-size: 1.2em;
+                margin-bottom: 15px;
+            }
+
+            .option {
+                padding: 12px 15px;
+                font-size: 0.95em;
+            }
+
+            .quiz-header h2 {
+                font-size: 1.5em;
+            }
+
+            .quiz-timer {
+                font-size: 1.3em;
+                padding: 10px 15px;
+            }
+
+            .result-score {
+                font-size: 3em;
+            }
+
+            .result-message {
+                font-size: 1.3em;
+            }
+
+            .leaderboard h3 {
+                font-size: 1.3em;
+            }
+
+            .leaderboard-item {
+                padding: 10px 0;
+                font-size: 0.95em;
+            }
+
+            .quiz-level-buttons button {
+                font-size: 0.95em;
+                padding: 10px 15px;
+            }
+
+            .auth-container {
+                width: 90%;
+                max-width: 300px;
+            }
+
+            .auth-container input {
+                padding: 8px;
+                font-size: 0.95em;
+            }
+
+            .auth-container button {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* Phones (480px and below) */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px 15px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .navbar nav {
+                gap: 5px;
+                width: 100%;
+            }
+
+            nav a {
+                font-size: 0.8em;
+                padding: 6px 8px;
+                flex: 1;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 1em;
+                margin-bottom: 5px;
+            }
+
+            .hero {
+                height: 120px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+
+            .hero h2 {
+                font-size: 14px;
+                margin-bottom: 3px;
+            }
+
+            .hero p {
+                font-size: 8px;
+                margin-bottom: 8px;
+            }
+
+            .hero button {
+                padding: 5px 10px;
+                font-size: 10px;
+            }
+
+            .vocab-container {
+                max-width: 100%;
+            }
+
+            .vocab-container h2 {
+                font-size: 1.3em;
+                margin-bottom: 15px;
+            }
+
+            .level-buttons {
+                gap: 5px;
+                margin-bottom: 15px;
+            }
+
+            .level-btn {
+                padding: 6px 8px;
+                font-size: 0.75em;
+            }
+
+            .words-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 8px;
+            }
+
+            .word-card {
+                padding: 12px;
+                min-height: 80px;
+                border-left: 3px solid #06B6D4;
+            }
+
+            .word-uz {
+                font-size: 1em;
+                margin-bottom: 3px;
+            }
+
+            .word-en {
+                font-size: 0.75em;
+            }
+
+            .word-hint {
+                font-size: 0.7em;
+            }
+
+            .quiz-container {
+                max-width: 100%;
+                padding: 8px;
+            }
+
+            .quiz-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .question-card {
+                padding: 15px;
+                margin-bottom: 10px;
+                border-left: 4px solid #06B6D4;
+            }
+
+            .question-text {
+                font-size: 1em;
+                margin-bottom: 12px;
+            }
+
+            .option {
+                padding: 10px 12px;
+                font-size: 0.85em;
+                margin-bottom: 5px;
+            }
+
+            .quiz-header h2 {
+                font-size: 1.2em;
+            }
+
+            .quiz-timer {
+                font-size: 1.1em;
+                padding: 8px 12px;
+                border: 1px solid #06B6D4;
+            }
+
+            .quiz-controls {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .submit-btn,
+            .back-btn {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+
+            .result-score {
+                font-size: 2.5em;
+            }
+
+            .result-message {
+                font-size: 1em;
+            }
+
+            .quiz-result {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+
+            .leaderboard {
+                padding: 15px;
+            }
+
+            .leaderboard h3 {
+                font-size: 1.1em;
+            }
+
+            .leaderboard-item {
+                padding: 8px 0;
+                font-size: 0.85em;
+            }
+
+            .quiz-level-buttons {
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+
+            .quiz-level-buttons button {
+                font-size: 0.85em;
+                padding: 8px 12px;
+                flex: 1;
+            }
+
+            .auth-container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .auth-container input {
+                padding: 6px;
+                font-size: 0.9em;
+            }
+
+            .auth-container button {
+                padding: 8px;
+                font-size: 0.85em;
+            }
+
+            footer {
+                padding: 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <h1 class="logo">ZENTRIXA</h1>
+        <nav>
+            <a onclick="showVocab()">Lug'atlar</a>
+            <a onclick="showQuiz()" class="test-link">🎯 Test</a>
+            <a onclick="showLogin()">Kirish</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="heroSection">
+        <h2>Master Words. Master the World.</h2>
+        <p>AI-powered English vocabulary learning platform for global minds.</p>
+        <button onclick="showVocab()">Lug'atlarni O'rganish</button>
+    </section>
+
+    <section class="vocab-section" id="vocabulary">
+        <div class="vocab-container">
+            <h2>Lug'atlar</h2>
+            <div class="level-buttons">
+                <button onclick="showLevel('A1')" class="level-btn active">A1 (Boshlang'ich)</button>
+                <button onclick="showLevel('A2')" class="level-btn">A2</button>
+                <button onclick="showLevel('B1')" class="level-btn">B1 (O'rta)</button>
+                <button onclick="showLevel('B2')" class="level-btn">B2</button>
+                <button onclick="showLevel('C1')" class="level-btn">C1 (Yuqori)</button>
+            </div>
+            <div id="wordsContainer" class="words-grid"></div>
+        </div>
+    </section>
+
+    <section class="quiz-section" id="quizSection">
+        <div class="quiz-container">
+            <div id="quizLevelSelect">
+                <h2 style="text-align: center; color: #06B6D4; margin-bottom: 30px;">Test Darajasini Tanlang</h2>
+                <div class="quiz-level-buttons">
+                    <button onclick="startQuiz('A1')" class="level-btn">A1 (Boshlang'ich)</button>
+                    <button onclick="startQuiz('A2')" class="level-btn">A2</button>
+                    <button onclick="startQuiz('B1')" class="level-btn">B1 (O'rta)</button>
+                    <button onclick="startQuiz('B2')" class="level-btn">B2</button>
+                    <button onclick="startQuiz('C1')" class="level-btn">C1 (Yuqori)</button>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="showVocab()" class="back-btn">Orqaga</button>
+                </div>
+            </div>
+
+            <div id="quizContent" style="display: none;">
+                <div class="quiz-header">
+                    <h2 id="quizLevelTitle">Test</h2>
+                    <div class="quiz-timer" id="timerDisplay">60</div>
+                </div>
+                <div id="questionsContainer"></div>
+                <div class="quiz-controls">
+                    <button onclick="submitQuiz()" class="submit-btn">Javoblarni Jo'natish</button>
+                    <button onclick="backToQuizLevel()" class="back-btn">Orqaga</button>
+                </div>
+            </div>
+
+            <div id="quizResults" style="display: none;">
+                <div class="quiz-result">
+                    <div class="result-score" id="resultScore">0/5</div>
+                    <div class="result-message" id="resultMessage">Yaxshi natija!</div>
+                </div>
+                <div id="leaderboardContainer"></div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="showQuiz()" class="submit-btn">Yana Test Qilish</button>
+                    <button onclick="showVocab()" class="back-btn">Lug'atlarga Qaytish</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="auth" class="auth-section">
+
+        <div class="auth-container">
+
+            <div id="loginForm">
+                <h2>Login</h2>
+                <input type="email" id="loginEmail" placeholder="Email">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <p>Akkaunt yo'qmi?
+                    <span onclick="showRegister()">Ro'yxatdan o'ting</span>
+                </p>
+            </div>
+
+            <div id="registerForm" style="display:none;">
+                <h2>Register</h2>
+                <input type="text" id="registerName" placeholder="F.I.O">
+                <input type="email" id="registerEmail" placeholder="Email">
+                <input type="password" id="registerPassword" placeholder="Parol">
+                <button onclick="register()">Akkaunt yaratish</button>
+                <p>Akkaunt bormi?
+                    <span onclick="showLogin()">Kirish</span>
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 ZENTRIX. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const API = "http://localhost:5000";
+
+        const WORDS = {
+            A1: [
+                { uz: "salom", en: "hello" },
+                { uz: "kitob", en: "book" },
+                { uz: "uy", en: "house" },
+                { uz: "maktab", en: "school" },
+                { uz: "suv", en: "water" },
+                { uz: "ovqat", en: "food" },
+                { uz: "ona", en: "mother" },
+                { uz: "ota", en: "father" },
+                { uz: "do'st", en: "friend" },
+                { uz: "ish", en: "work" },
+                { uz: "kun", en: "day" },
+                { uz: "kecha", en: "night" },
+                { uz: "yil", en: "year" },
+                { uz: "bola", en: "child" },
+                { uz: "erkak", en: "man" },
+                { uz: "ayol", en: "woman" },
+                { uz: "stol", en: "table" },
+                { uz: "stul", en: "chair" },
+                { uz: "telefon", en: "phone" },
+                { uz: "yo'l", en: "road" }
+            ],
+            A2: [
+                { uz: "sayohat", en: "travel" },
+                { uz: "uchrashuv", en: "meeting" },
+                { uz: "savol", en: "question" },
+                { uz: "javob", en: "answer" },
+                { uz: "dars", en: "lesson" },
+                { uz: "mashq", en: "exercise" },
+                { uz: "bozor", en: "market" },
+                { uz: "kasal", en: "sick" },
+                { uz: "shifokor", en: "doctor" },
+                { uz: "dori", en: "medicine" },
+                { uz: "mehmon", en: "guest" },
+                { uz: "ofis", en: "office" },
+                { uz: "xona", en: "room" },
+                { uz: "mehmonxona", en: "hotel" },
+                { uz: "samolyot", en: "airplane" },
+                { uz: "poezd", en: "train" },
+                { uz: "avtobus", en: "bus" },
+                { uz: "chipta", en: "ticket" },
+                { uz: "ishchi", en: "worker" },
+                { uz: "o'qituvchi", en: "teacher" }
+            ],
+            B1: [
+                { uz: "tajriba", en: "experience" },
+                { uz: "maslahat", en: "advice" },
+                { uz: "munosabat", en: "relationship" },
+                { uz: "jamiyat", en: "society" },
+                { uz: "madaniyat", en: "culture" },
+                { uz: "an'ana", en: "tradition" },
+                { uz: "maqsad", en: "goal" },
+                { uz: "natija", en: "result" },
+                { uz: "loyiha", en: "project" },
+                { uz: "rahbar", en: "leader" },
+                { uz: "xodim", en: "employee" },
+                { uz: "mijoz", en: "client" },
+                { uz: "raqobat", en: "competition" },
+                { uz: "bozor", en: "market" },
+                { uz: "iqtisod", en: "economy" },
+                { uz: "ta'sir", en: "impact" },
+                { uz: "xizmat", en: "service" },
+                { uz: "texnologiya", en: "technology" },
+                { uz: "axborot", en: "information" },
+                { uz: "aloqa", en: "communication" }
+            ],
+            B2: [
+                { uz: "murakkab", en: "complex" },
+                { uz: "nazariya", en: "theory" },
+                { uz: "amaliyot", en: "practice" },
+                { uz: "innovatsiya", en: "innovation" },
+                { uz: "raqamli", en: "digital" },
+                { uz: "global", en: "global" },
+                { uz: "muhim", en: "significant" },
+                { uz: "barqaror", en: "sustainable" },
+                { uz: "tadqiqot", en: "research" },
+                { uz: "yechim", en: "solution" },
+                { uz: "samarali", en: "efficient" },
+                { uz: "muvofiq", en: "appropriate" },
+                { uz: "jarayon", en: "process" },
+                { uz: "tizim", en: "system" },
+                { uz: "resurs", en: "resource" },
+                { uz: "rahbariyat", en: "management" },
+                { uz: "tashkilot", en: "organization" },
+                { uz: "muvaffaqiyatli", en: "successful" },
+                { uz: "sifat", en: "quality" },
+                { uz: "strategik", en: "strategic" }
+            ],
+            C1: [
+                { uz: "mukammal", en: "comprehensive" },
+                { uz: "innovatsion", en: "innovative" },
+                { uz: "globalizatsiya", en: "globalization" },
+                { uz: "tahliliy", en: "analytical" },
+                { uz: "mantiqiy", en: "logical" },
+                { uz: "konseptual", en: "conceptual" },
+                { uz: "intellektual", en: "intellectual" },
+                { uz: "strategik fikrlash", en: "strategic thinking" },
+                { uz: "murakkab tizim", en: "complex system" },
+                { uz: "raqobatbardosh", en: "competitive" },
+                { uz: "barqarorlik strategiyasi", en: "sustainability strategy" },
+                { uz: "resurslarni boshqarish", en: "resource management" },
+                { uz: "liderlik", en: "leadership" },
+                { uz: "hamkorlik muhiti", en: "collaborative environment" },
+                { uz: "qaror qabul qilish", en: "decision making" },
+                { uz: "ijodkorlik", en: "creativity" },
+                { uz: "tanqidiy fikrlash", en: "critical thinking" },
+                { uz: "barqaror o'sish", en: "sustainable growth" },
+                { uz: "muammoli vaziyat", en: "challenging situation" },
+                { uz: "ilmiy yondashuv", en: "scientific approach" }
+            ]
+        };
+
+        let currentLevel = 'A1';
+        let quizQuestions = [];
+        let quizAnswers = {};
+        let quizTimeLeft = 60;
+        let quizTimer = null;
+
+        // Quiz Questions Data
+        const QUIZ_QUESTIONS = {
+            A1: [
+                { question: "O'zbek tiliga 'hello' qanday aytiladi?", options: ["salom", "ona", "kitob", "suv"], answer: "salom" },
+                { question: "'book' nima?", options: ["suv", "kitob", "uy", "kun"], answer: "kitob" },
+                { question: "Muasir joyni anglatgan so'z?", options: ["kun", "uy", "yo'l", "shahar"], answer: "uy" },
+                { question: "'maktab' qanday tarjima?", options: ["house", "school", "work", "phone"], answer: "school" },
+                { question: "'water' o'zbekchada?", options: ["ovqat", "suv", "ota", "do'st"], answer: "suv" },
+                { question: "'ovqat' nima?", options: ["drink", "water", "food", "mother"], answer: "food" },
+                { question: "'ona' kim?", options: ["father", "mother", "friend", "child"], answer: "mother" },
+                { question: "'do'st' qanday?", options: ["work", "friend", "day", "night"], answer: "friend" },
+                { question: "'ish' qanday to'g'ri tarjima?", options: ["day", "work", "year", "person"], answer: "work" },
+                { question: "'bola' nima?", options: ["woman", "child", "man", "person"], answer: "child" },
+                { question: "'stol' nima?", options: ["chair", "table", "window", "door"], answer: "table" },
+                { question: "'stul' nima?", options: ["table", "chair", "clock", "window"], answer: "chair" },
+                { question: "'telefon' qanday?", options: ["road", "phone", "door", "window"], answer: "phone" },
+                { question: "'yo'l' nimani anglatadi?", options: ["house", "road", "school", "city"], answer: "road" },
+                { question: "'ken' o'zbekcha qanday?", options: ["night", "year", "day", "morning"], answer: "day" }
+            ],
+            A2: [
+                { question: "Sayohat nimani anglatadi?", options: ["meeting", "travel", "question", "lesson"], answer: "travel" },
+                { question: "'dars' inglizchada?", options: ["exercise", "lesson", "answer", "question"], answer: "lesson" },
+                { question: "Shifokor kim?", options: ["teacher", "doctor", "worker", "student"], answer: "doctor" },
+                { question: "'mehmon' qanday?", options: ["guest", "office", "room", "hotel"], answer: "guest" },
+                { question: "Samolyot qanday tarjima?", options: ["train", "bus", "airplane", "car"], answer: "airplane" },
+                { question: "'savol' nima?", options: ["answer", "question", "lesson", "exercise"], answer: "question" },
+                { question: "'javob' qanday?", options: ["question", "answer", "meeting", "travel"], answer: "answer" },
+                { question: "'mashq' nima?", options: ["lesson", "question", "exercise", "answer"], answer: "exercise" },
+                { question: "'bozor' nimani anglatadi?", options: ["market", "office", "room", "hotel"], answer: "market" },
+                { question: "'kasal' nima?", options: ["healthy", "sick", "well", "strong"], answer: "sick" },
+                { question: "'dori' qanday?", options: ["doctor", "disease", "medicine", "hospital"], answer: "medicine" },
+                { question: "'ofis' nima?", options: ["office", "room", "door", "window"], answer: "office" },
+                { question: "'xona' qanday?", options: ["office", "room", "hotel", "house"], answer: "room" },
+                { question: "'mehmonxona' nima?", options: ["house", "room", "hotel", "office"], answer: "hotel" },
+                { question: "'chipta' qanday?", options: ["train", "ticket", "bus", "airplane"], answer: "ticket" }
+            ],
+            B1: [
+                { question: "Tajriba nima?", options: ["advice", "experience", "relationship", "culture"], answer: "experience" },
+                { question: "'jamiyat' qanday inglizcha?", options: ["tradition", "society", "culture", "goal"], answer: "society" },
+                { question: "Madaniyat kim yoki nima?", options: ["leader", "culture", "service", "technology"], answer: "culture" },
+                { question: "'maqsad' qanday?", options: ["result", "goal", "project", "impact"], answer: "goal" },
+                { question: "Xizmat qanday tarjima?", options: ["information", "service", "communication", "impact"], answer: "service" },
+                { question: "'maslahat' nima?", options: ["experience", "advice", "relationship", "tradition"], answer: "advice" },
+                { question: "'munosabat' qanday?", options: ["experience", "advice", "relationship", "culture"], answer: "relationship" },
+                { question: "'an'ana' nimani anglatadi?", options: ["culture", "tradition", "society", "goal"], answer: "tradition" },
+                { question: "'natija' nima?", options: ["goal", "result", "project", "leader"], answer: "result" },
+                { question: "'loyiha' qanday?", options: ["leader", "employee", "project", "client"], answer: "project" },
+                { question: "'rahbar' kim?", options: ["employee", "client", "leader", "worker"], answer: "leader" },
+                { question: "'iqtisod' nima?", options: ["market", "economy", "service", "technology"], answer: "economy" },
+                { question: "'ta'sir' qanday?", options: ["service", "communication", "impact", "information"], answer: "impact" },
+                { question: "'axborot' nima?", options: ["communication", "information", "technology", "service"], answer: "information" },
+                { question: "'aloqa' qanday?", options: ["technology", "communication", "information", "impact"], answer: "communication" }
+            ],
+            B2: [
+                { question: "Murakkab nimani anglatadi?", options: ["simple", "complex", "digital", "global"], answer: "complex" },
+                { question: "'nazariya' qanday?", options: ["practice", "theory", "innovation", "research"], answer: "theory" },
+                { question: "Innovatsiya nima?", options: ["digital", "innovation", "global", "sustainable"], answer: "innovation" },
+                { question: "'raqamli' qanday inglizcha?", options: ["digital", "global", "significant", "sustainable"], answer: "digital" },
+                { question: "Tadqiqot qanday tarjima?", options: ["solution", "efficient", "research", "system"], answer: "research" },
+                { question: "'amaliyot' nima?", options: ["theory", "practice", "innovation", "research"], answer: "practice" },
+                { question: "'global' qanday?", options: ["digital", "whole world", "significant", "local"], answer: "whole world" },
+                { question: "'muhim' nima?", options: ["digital", "significant", "sustainable", "global"], answer: "significant" },
+                { question: "'barqaror' qanday?", options: ["efficient", "sustainable", "digital", "global"], answer: "sustainable" },
+                { question: "'yechim' nima?", options: ["problem", "solution", "process", "system"], answer: "solution" },
+                { question: "'samarali' qanday?", options: ["efficient", "appropriate", "strategic", "successful"], answer: "efficient" },
+                { question: "'jarayon' nimani anglatadi?", options: ["system", "process", "resource", "management"], answer: "process" },
+                { question: "'tizim' nima?", options: ["process", "system", "resource", "management"], answer: "system" },
+                { question: "'resurs' qanday?", options: ["system", "resource", "management", "organization"], answer: "resource" },
+                { question: "'rahbariyat' nima?", options: ["organization", "management", "resource", "system"], answer: "management" }
+            ],
+            C1: [
+                { question: "Mukammal nimani anglatadi?", options: ["innovative", "comprehensive", "analytical", "intellectual"], answer: "comprehensive" },
+                { question: "'innovatsion' qanday englizcha?", options: ["analytical", "logical", "innovative", "conceptual"], answer: "innovative" },
+                { question: "Globalizatsiya nima?", options: ["globalization", "strategy", "development", "growth"], answer: "globalization" },
+                { question: "'tahliliy' qanday tarjima?", options: ["logical", "analytical", "conceptual", "intellectual"], answer: "analytical" },
+                { question: "Liderlik qanday?", options: ["creativity", "leadership", "growth", "achievement"], answer: "leadership" },
+                { question: "'mantiqiy' nima?", options: ["analytical", "logical", "intellectual", "creative"], answer: "logical" },
+                { question: "'konseptual' qanday?", options: ["analytical", "conceptual", "logical", "intellectual"], answer: "conceptual" },
+                { question: "'intellektual' nima?", options: ["creative", "intellectual", "analytical", "logical"], answer: "intellectual" },
+                { question: "'ijodiy' qanday?", options: ["analytical", "creative", "logical", "intellectual"], answer: "creative" },
+                { question: "'tanqidiy fikrlash' nima?", options: ["strategic thinking", "creative thinking", "critical thinking", "analytical thinking"], answer: "critical thinking" },
+                { question: "'strategik fikrlash' qanday?", options: ["creative thinking", "strategic thinking", "critical thinking", "analytical thinking"], answer: "strategic thinking" },
+                { question: "'barqaror o'sish' nimani anglatadi?", options: ["sustainable growth", "creative growth", "rapid growth", "strategic growth"], answer: "sustainable growth" },
+                { question: "'ijodkorlik' nima?", options: ["leadership", "creativity", "growth", "achievement"], answer: "creativity" },
+                { question: "'muvaffaqiyat omili' qanday?", options: ["failure factor", "success factor", "growth factor", "change factor"], answer: "success factor" },
+                { question: "'professional etik' nima?", options: ["professional ethics", "professional growth", "professional skill", "professional development"], answer: "professional ethics" }
+            ]
+        };
+
+        function showRegister() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "block";
+            document.getElementById("vocabulary").style.display = "none";
+            document.getElementById("quizSection").style.display = "none";
+            document.getElementById("heroSection").style.display = "none";
+        }
+
+        function showLogin() {
+            document.getElementById("loginForm").style.display = "block";
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("vocabulary").style.display = "none";
+            document.getElementById("quizSection").style.display = "none";
+            document.getElementById("heroSection").style.display = "none";
+        }
+
+        function showVocab() {
+            document.getElementById("vocabulary").style.display = "block";
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("quizSection").style.display = "none";
+            document.getElementById("heroSection").style.display = "none";
+            displayWords('A1');
+        }
+
+        function showQuiz() {
+            document.getElementById("quizSection").style.display = "block";
+            document.getElementById("vocabulary").style.display = "none";
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("heroSection").style.display = "none";
+            document.getElementById("quizLevelSelect").style.display = "block";
+            document.getElementById("quizContent").style.display = "none";
+            document.getElementById("quizResults").style.display = "none";
+        }
+
+        function startQuiz(level) {
+            currentLevel = level;
+            quizQuestions = QUIZ_QUESTIONS[level];
+            quizAnswers = {};
+            quizTimeLeft = 180;
+
+            document.getElementById("quizLevelSelect").style.display = "none";
+            document.getElementById("quizContent").style.display = "block";
+            document.getElementById("quizResults").style.display = "none";
+            document.getElementById("quizLevelTitle").innerText = `Test - ${level} Darajasi`;
+
+            displayQuizQuestions();
+            startQuizTimer();
+        }
+
+        function displayQuizQuestions() {
+            const container = document.getElementById("questionsContainer");
+            container.innerHTML = "";
+
+            quizQuestions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.className = "question-card";
+                questionDiv.innerHTML = `
+            <div class="question-text">${index + 1}. ${q.question}</div>
+            <div class="options">
+                ${q.options.map(option => `
+                    <label class="option">
+                        <input type="radio" name="q${index}" value="${option}">
+                        ${option}
+                    </label>
+                `).join('')}
+            </div>
+        `;
+                container.appendChild(questionDiv);
+            });
+        }
+
+        function startQuizTimer() {
+            if (quizTimer) clearInterval(quizTimer);
+
+            quizTimer = setInterval(() => {
+                quizTimeLeft--;
+                const timerDisplay = document.getElementById("timerDisplay");
+                timerDisplay.innerText = quizTimeLeft;
+
+                if (quizTimeLeft <= 10) {
+                    timerDisplay.classList.add("warning");
+                }
+                if (quizTimeLeft <= 5) {
+                    timerDisplay.classList.remove("warning");
+                    timerDisplay.classList.add("danger");
+                }
+
+                if (quizTimeLeft <= 0) {
+                    clearInterval(quizTimer);
+                    submitQuiz();
+                }
+            }, 1000);
+        }
+
+        function submitQuiz() {
+            if (quizTimer) clearInterval(quizTimer);
+
+            let score = 0;
+
+            quizQuestions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selected && selected.value === q.answer) {
+                    score++;
+                }
+            });
+
+            showQuizResults(score);
+        }
+
+        function showQuizResults(score) {
+            document.getElementById("quizContent").style.display = "none";
+            document.getElementById("quizResults").style.display = "block";
+
+            const total = quizQuestions.length;
+            const percentage = Math.round((score / total) * 100);
+
+            document.getElementById("resultScore").innerText = `${score}/${total}`;
+
+            let message = "";
+            if (percentage === 100) {
+                message = "🎉 Ajoyib natija! Siz juda yaxshi!";
+            } else if (percentage >= 80) {
+                message = "👏 Yaxshi natija! Davom eting!";
+            } else if (percentage >= 60) {
+                message = "✅ Yetarli natija. Yana harakat qiling!";
+            } else {
+                message = "📚 Ko'proq o'zlashtirishingiz talabgarcha. Qaytadan urinib ko'ring!";
+            }
+
+            document.getElementById("resultMessage").innerText = message;
+
+            // Show sample leaderboard
+            displaySampleLeaderboard();
+        }
+
+        function displaySampleLeaderboard() {
+            const leaderboardHTML = `
+        <div class="leaderboard">
+            <h3>🏆 Top Natijalari</h3>
+            <div class="leaderboard-item">
+                <span class="leaderboard-rank">1. Ali Muhammad</span>
+                <span>5/5</span>
+            </div>
+            <div class="leaderboard-item">
+                <span class="leaderboard-rank">2. Shukhrat Isomov</span>
+                <span>4/5</span>
+            </div>
+            <div class="leaderboard-item">
+                <span class="leaderboard-rank">3. Mariya Petrova</span>
+                <span>4/5</span>
+            </div>
+            <div class="leaderboard-item">
+                <span class="leaderboard-rank">4. Johnathan Smith</span>
+                <span>3/5</span>
+            </div>
+            <div class="leaderboard-item">
+                <span class="leaderboard-rank">5. Siz</span>
+                <span id="yourScore\">4/5</span>
+            </div>
+        </div>
+    `;
+            document.getElementById("leaderboardContainer").innerHTML = leaderboardHTML;
+        }
+
+        function backToQuizLevel() {
+            if (quizTimer) clearInterval(quizTimer);
+            document.getElementById("quizLevelSelect").style.display = "block";
+            document.getElementById("quizContent").style.display = "none";
+        }
+
+        function showLevel(level) {
+            currentLevel = level;
+
+            document.querySelectorAll('.level-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            displayWords(level);
+        }
+
+        function displayWords(level) {
+            const container = document.getElementById('wordsContainer');
+            container.innerHTML = '';
+
+            const words = WORDS[level];
+
+            words.forEach((word) => {
+                const card = document.createElement('div');
+                card.className = 'word-card';
+                card.innerHTML = `
+            <div class="word-uz">${word.uz}</div>
+            <div class="word-en">${word.en}</div>
+            <div class="word-hint">Bosish uchun aylantiring</div>
+        `;
+
+                card.addEventListener('click', function () {
+                    this.classList.toggle('flipped');
+                });
+
+                container.appendChild(card);
+            });
+        }
+
+        async function register() {
+            const name = document.getElementById("registerName").value;
+            const email = document.getElementById("registerEmail").value;
+            const password = document.getElementById("registerPassword").value;
+
+            const res = await fetch(`${API}/api/auth/register`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, password })
+            });
+
+            const data = await res.json();
+            alert(data.message);
+        }
+
+        async function login() {
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+
+            const res = await fetch(`${API}/api/auth/login`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+
+            if (data.token) {
+                localStorage.setItem("token", data.token);
+                window.location.href = "dashboard.html";
+            } else {
+                alert(data.message);
+            }
+        }
+    </script>
+</body>
+
+</html>
