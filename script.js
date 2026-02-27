@@ -23,7 +23,23 @@ const wordsA1 = [
   { word: "apple", meaning: "olma" },
   { word: "book", meaning: "kitob" }
   // ...
-];
+];function getRandomWord(level) {
+  let array;
+  switch(level) {
+    case "A1": array = wordsA1; break;
+    case "A2": array = wordsA2; break;
+    case "B1": array = wordsB1; break;
+    case "B2": array = wordsB2; break;
+    case "C1": array = wordsC1; break;
+    default: array = wordsA1;
+  }
+  const index = Math.floor(Math.random() * array.length);
+  return array[index];
+}
+
+// Misol
+const randomWord = getRandomWord("B2");
+console.log(randomWord.word, "-", randomWord.meaning);
 
 function getRandomWord(level) {
   // ... shu funksiya
