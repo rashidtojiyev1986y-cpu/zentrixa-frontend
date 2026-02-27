@@ -18,7 +18,16 @@ const questions = [
     question: "Water so‘zining tarjimasi?",
     options: ["Suv", "Choy", "Sharbat", "Sut"],
     answer: 0
-  }
+  }// words.js
+const wordsA1 = [
+  { word: "apple", meaning: "olma" },
+  { word: "book", meaning: "kitob" }
+  // ...
+];
+
+function getRandomWord(level) {
+  // ... shu funksiya
+}
 ];
 
 let currentQuestion = 0;
