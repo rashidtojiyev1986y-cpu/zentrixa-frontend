@@ -10,7 +10,48 @@
     <meta name="keywords"
         content="english vocabulary, английский язык, узбекский, learn english, lug'at, test, A1, A2, B1, B2, C1, ZENTRIXA">
     <meta name="author" content="ZENTRIXA">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow"><!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>ZENTRIXA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Sayt tarkibi -->
+  <div id="quiz-section"></div>
+  <div id="leaderboard-section"></div>
+
+  <!-- JS codelar -->
+  <script>
+    // Shu yerga wordsA1, wordsA2 ... wordsC1 array va getRandomWord funksiyasini yozamiz
+    const wordsA1 = [
+      { word: "apple", meaning: "olma" },
+      { word: "book", meaning: "kitob" },
+      { word: "cat", meaning: "mushuk" }
+      // ... shu tarzda 100 ta
+    ];
+
+    function getRandomWord(level) {
+      let array;
+      switch(level) {
+        case "A1": array = wordsA1; break;
+        // case A2,B1,B2,C1 xuddi shunday
+        default: array = wordsA1;
+      }
+      const index = Math.floor(Math.random() * array.length);
+      return array[index];
+    }
+
+    // Misol: random so‘z chiqarish
+    const currentWord = getRandomWord("A1");
+    console.log(currentWord.word, "-", currentWord.meaning);
+  </script>
+
+  <script src="script.js"></script> <!-- Agar boshqa JS fayllar bo‘lsa -->
+</body>
+</html>
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="ZENTRIXA | Master Words. Master the World.">
